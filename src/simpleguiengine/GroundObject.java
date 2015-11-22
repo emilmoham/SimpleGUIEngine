@@ -9,11 +9,15 @@ public class GroundObject {
     double width;
     double height;
     
+    BoxCollider b;
+    
     public GroundObject(double x, double y, double w, double h){
         xTopLeft = x;
         yTopLeft = y;
         width = w;
         height = h;
+        
+        b = new BoxCollider(x,y,w,h);
     }
     
     public void visualize(SimpleGUI sg){
