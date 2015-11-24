@@ -73,9 +73,9 @@ public class World implements TimerListener {
         globe.drawFilledBox(0, globe.getHeight() - 50, globe.getWidth(), 50, Color.GREEN, 1.0, "Ground");
 
         p1 = p;
-        player_X = p1.startX;
-        player_Y = p1.startY;
-        player_size = p1.playerSize;
+        player_X = p1.xTopLeft;
+        player_Y = p1.yTopLeft;
+        player_size = (int)p1.width;
 
         visualize();
     }
