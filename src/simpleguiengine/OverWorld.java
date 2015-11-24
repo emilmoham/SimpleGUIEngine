@@ -25,10 +25,15 @@ public class OverWorld {
     
     public void addPlayer(Player p){
         p1 = p;
+        GroundObjects.add(p1);
+        BoxColliders.add(p1.b);
     }
     
     public void visualizeAll(){
         for(int i = 0; i < GroundObjects.size(); i++){
+            if(GroundObjects.get(i) == p1){
+                continue;
+            }
             GroundObjects.get(i).visualize(globe);
         }
         
