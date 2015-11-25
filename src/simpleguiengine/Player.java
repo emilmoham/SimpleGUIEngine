@@ -9,7 +9,7 @@ public class Player extends GroundObject implements TimerListener {
 
     //Visualization Data
     SimpleGUI globe;
-    double playerSize = 50;
+    //double playerSize = 50;
 
     boolean moveLeft = false;
     boolean moveRight = false;
@@ -50,7 +50,7 @@ public class Player extends GroundObject implements TimerListener {
 
     public Player(double x, double y, double w, double h, SimpleGUI sg) {
         super(x, y, w, h);
-        playerSize = (w+h)/2;
+        //playerSize = (w+h)/2;
         globe = sg;
         
         globe.registerToKeyboard(controls);
@@ -70,7 +70,7 @@ public class Player extends GroundObject implements TimerListener {
         } else if (moveLeft) {
             moveLeft = false;
             globe.animMoveAllRel(-4, 0, "Player");
-            yTopLeft -= 4;
+            xTopLeft -= 4;
         }
         b.updatePosition(xTopLeft, yTopLeft);
         globe.repaintPanel();
