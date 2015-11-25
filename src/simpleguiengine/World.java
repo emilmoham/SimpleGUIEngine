@@ -5,6 +5,12 @@ import simplegui.KeyboardListener;
 import simplegui.TimerListener;
 import simplegui.SimpleGUI;
 
+/* 
+THIS CLASS IS NOW OBSOLETE
+All world functions are now handled in the OverWorld class
+This is being kept only as a reference for physics equations in the future.
+*/
+
 public class World implements TimerListener {
 
     //Player Data
