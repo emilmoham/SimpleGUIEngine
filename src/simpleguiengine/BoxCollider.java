@@ -34,7 +34,7 @@ public class BoxCollider {
             //-Check top side of this element
             yCollide = (yTopLeft <= (b.get(i).yTopLeft+b.get(i).height) && yTopLeft >= (b.get(i).yTopLeft));
             //-Check bottom side of this element
-            yCollide = yCollide || ((yTopLeft+height) >= b.get(i).yTopLeft && (yTopLeft+height) <= b.get(i).yTopLeft+height);
+            yCollide = yCollide || ((yTopLeft+height) >= b.get(i).yTopLeft && (yTopLeft+height) <= b.get(i).yTopLeft+b.get(i).height);
             if(xCollide && yCollide){
                 return true;
             }
@@ -42,8 +42,24 @@ public class BoxCollider {
         return false;
     }
     
+    public boolean isColliding(BoxCollider b){
+        boolean xCollide;
+        boolean yCollide;
+        xCollide = ((xTopLeft+width) >= b.xTopLeft && (xTopLeft+width) <= (b.xTopLeft+b.width));
+        xCollide = xCollide || ((xTopLeft <= (b.xTopLeft+b.width)) && (xTopLeft >= b.xTopLeft));
+        yCollide = (yTopLeft <= (b.yTopLeft+b.height) && yTopLeft >= (b.yTopLeft));
+        yCollide = yCollide || ((yTopLeft+height) >= b.yTopLeft && (yTopLeft+height) <= b.yTopLeft+ b.height);
+        //System.out.println(""+xCollide + " " + yCollide);
+        return (xCollide && yCollide);
+    }
+    
     public void updatePosition(double x, double y){
         xTopLeft = x;
         yTopLeft = y;
+    }
+    
+    public void updateSize(double w, double h){
+        width = w;
+        height = h;
     }
 }
