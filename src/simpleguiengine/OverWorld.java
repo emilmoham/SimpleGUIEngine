@@ -32,6 +32,7 @@ public class OverWorld implements TimerListener {
         GroundObjects.add(p1);
         indexOfPlayerGroundObject = GroundObjects.size();
         BoxColliders.add(p1.b);
+        p1.bcs = BoxColliders;
     }
 
     public void visualizeAll() {
@@ -56,7 +57,7 @@ public class OverWorld implements TimerListener {
                 continue;
             }
             if (p1.b.isColliding(BoxColliders.get(i))) {
-                System.out.println("Colliding");
+                //System.out.println("Colliding");
             }
         }
 
